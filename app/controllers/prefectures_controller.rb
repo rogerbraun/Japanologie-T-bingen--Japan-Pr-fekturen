@@ -3,7 +3,7 @@ class PrefecturesController < ApplicationController
   # GET /prefectures
   # GET /prefectures.xml
   def index
-    @prefectures = Prefecture.all
+    @prefectures = Prefecture.order("region_id")
 
     respond_to do |format|
       format.html # index.html.erb

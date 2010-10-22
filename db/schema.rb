@@ -10,11 +10,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101022175915) do
+ActiveRecord::Schema.define(:version => 20101022205927) do
 
   create_table "prefectures", :force => true do |t|
     t.string   "name"
     t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "region_id"
+  end
+
+  create_table "regions", :force => true do |t|
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

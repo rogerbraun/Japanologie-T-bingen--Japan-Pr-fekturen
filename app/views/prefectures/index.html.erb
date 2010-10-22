@@ -2,7 +2,7 @@
 
 
 <% @prefectures.each do |prefecture| %>
-  <h2><%= link_to prefecture.name, prefecture %></h2>
+  <h2><%= link_to "#{prefecture.name} - #{prefecture.region.name}"  , prefecture %></h2>
 <% end %>
 <br />
 
