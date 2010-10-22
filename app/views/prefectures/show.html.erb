@@ -1,13 +1,8 @@
 <p id="notice"><%= notice %></p>
 
+<h2><%= @prefecture.name %></h2>
 <p>
-  <b>Name:</b>
-  <%= @prefecture.name %>
-</p>
-
-<p>
-  <b>Content:</b>
-  <%= @prefecture.content %>
+  <%= raw Maruku.new(@prefecture.content).to_html %>
 </p>
 
 
