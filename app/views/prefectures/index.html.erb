@@ -1,25 +1,9 @@
 <h1>Listing prefectures</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Content</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
 
 <% @prefectures.each do |prefecture| %>
-  <tr>
-    <td><%= prefecture.name %></td>
-    <td><%= prefecture.content %></td>
-    <td><%= link_to 'Show', prefecture %></td>
-    <td><%= link_to 'Edit', edit_prefecture_path(prefecture) %></td>
-    <td><%= link_to 'Destroy', prefecture, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
+  <h2><%= link_to prefecture.name, prefecture %></h2>
 <% end %>
-</table>
-
 <br />
 
 <%= link_to 'New Prefecture', new_prefecture_path %>
