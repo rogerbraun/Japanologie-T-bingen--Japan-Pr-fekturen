@@ -1,0 +1,7 @@
+<h1><%= @region.name %></h1>
+<ul>
+  <% @region.prefectures.each do |prefecture| %>
+    <li><%= link_to prefecture.name, prefecture %></li> 
+  <% end %>
+</ul>
+<%= link_to "Zurück zur Regionsübersicht", regions_path %>

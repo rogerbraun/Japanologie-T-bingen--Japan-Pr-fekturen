@@ -1,7 +1,9 @@
 WS1011Landeskunde::Application.routes.draw do
+
   devise_for :users
 
   resources :prefectures
+  resources :regions
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
