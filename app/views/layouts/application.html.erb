@@ -7,7 +7,14 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+<% if user_signed_in? %>
+ Hallo, <%= current_user.email %>! <%= link_to "Abmelden", destroy_user_session_path %>
+<% else %>
+  <%= link_to "Anmelden", new_user_session_path %>
+  <%= link_to "Registrieren", new_user_registration_path %>
+<%end %>
 <%= yield %>
 
 </body>
