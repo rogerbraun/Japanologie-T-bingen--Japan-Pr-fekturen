@@ -8,7 +8,7 @@ WS1011Landeskunde::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
   
-  root :to => "prefectures#index"
+  root :to => "regions#index"
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
