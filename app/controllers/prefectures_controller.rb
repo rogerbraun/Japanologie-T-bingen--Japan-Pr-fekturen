@@ -1,5 +1,5 @@
 class PrefecturesController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  #before_filter :authenticate_user!, :except => [:index, :show]
   # GET /prefectures
   # GET /prefectures.xml
   def index

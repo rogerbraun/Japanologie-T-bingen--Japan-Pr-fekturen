@@ -1,21 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>WS1011Landeskunde</title>
+<!doctype html> 
+<html lang="de"> 
+<head> 
+  <meta charset="utf-8" /> 
+  <title>Landeskunde WS10/11</title> 
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
-</head>
-<body>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+  <!--[if IE]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]--> 
+</head> 
+<body> 
+<div id="wrapper"><!-- #wrapper --> 
+ 
+  <nav><!-- top nav --> 
+    <div class="menu"> 
+      <ul> 
+        <li><%= link_to "Regionen", regions_path %></li> 
+        <li><%= link_to "Präfekturen", prefectures_path %></a></li> 
 <% if user_signed_in? %>
- Hallo, <%= current_user.email %>! <%= link_to "Abmelden", destroy_user_session_path %>
+ <li><%= link_to "Abmelden", destroy_user_session_path %></li>
 <% else %>
-  <%= link_to "Anmelden", new_user_session_path %>
-  <%= link_to "Registrieren", new_user_registration_path %>
+  <li><%= link_to "Anmelden", new_user_session_path %></li>
+  <li><%= link_to "Registrieren", new_user_registration_path %></li>
 <%end %>
-<%= yield %>
-
-</body>
-</html>
+      </ul> 
+    </div> 
+  </nav><!-- end of top nav --> 
+  
+  <header><!-- header --> 
+    <h1><a href="#">Landeskunde WS10/11</a></h1> 
+  </header><!-- end of header --> 
+  
+  <section id="main"><!-- #main content and sidebar area --> 
+  
+    <aside id="sidebar1"><!-- sidebar1 --> 
+ 
+    </aside><!-- end of sidebar1 --> 
+  
+      <section id="content"><!-- #content --> 
+      <p><%= notice %></p>
+      <p><%= alert%></p>
+      
+           <%= yield %> 
+      </section><!-- end of #content --> 
+ 
+ 
+  </section><!-- end of #main content and sidebar--> 
+  
+  
+</div><!-- #wrapper --> 
+<!-- Free template created by http://freehtml5templates.com --> 
+</body> 
+</html> 
