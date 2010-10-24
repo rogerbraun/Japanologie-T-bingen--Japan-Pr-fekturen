@@ -7,5 +7,6 @@ class User < ActiveRecord::Base
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me
 
+  validates :email, :format => {:with => /.*uni-tuebingen.de/, :on => :create}
   belongs_to :prefecture
 end
