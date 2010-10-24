@@ -8,10 +8,14 @@
 
 
 <% content_for :sidebar2 do %>
+
   <h3>Editiert von:</h3>
   <ul>
-    <% @region.users.each do |user| %>
-      <li><%= user.email %></li>
+    <% @region.prefectures.map(&:user).each do |user| %>
+      <% if user %>
+        <li><%= user.email %></li>
+      <% end %>
     <% end %> 
   </ul>
+
 <% end %>

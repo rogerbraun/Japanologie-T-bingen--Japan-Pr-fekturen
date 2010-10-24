@@ -7,3 +7,12 @@
 <%= link_to 'Bearbeiten', edit_prefecture_path(@prefecture) %> |
 <%= link_to 'Zurück zur Region', @prefecture.region%>
 </p>
+
+<% content_for :sidebar2 do%>
+<h3>Bearbeitet von:</h3>
+<p>
+<% if @prefecture.user %>
+  <%= @prefecture.user.email %>
+<% end %>
+</p>
+<% end %>

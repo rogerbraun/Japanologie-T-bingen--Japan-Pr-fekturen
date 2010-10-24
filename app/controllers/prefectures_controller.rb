@@ -87,7 +87,7 @@ class PrefecturesController < ApplicationController
 
   def authorize_edit
     @prefecture = Prefecture.find(params[:id])
-    unless current_user.admin? or current_user.region == @prefecture.region
+    unless current_user.admin? or current_user.prefecture && current_user.prefecture.region == @prefecture.region
       flash[:notice] = "Dir fehlen die Rechte für diese Aktion"
       redirect_to @prefecture 
     end
