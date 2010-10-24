@@ -12,6 +12,7 @@
 <h3>Bearbeitet von:</h3>
 <p>
 <% if @prefecture.user %>
+<%= image_tag @prefecture.user.gravatar_url(:size => 40, :default => :identicon) %> <br />
   <%= @prefecture.user.email %>
 <% end %>
 </p>
