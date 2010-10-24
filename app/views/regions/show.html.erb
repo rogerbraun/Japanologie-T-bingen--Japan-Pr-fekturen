@@ -9,13 +9,15 @@
 
 <% content_for :sidebar2 do %>
 
-  <h3>Editiert von:</h3>
-  <ul>
-    <% @region.prefectures.map(&:user).each do |user| %>
+<h3>Bearbeiter</h3>
+  <% @region.prefectures.map(&:user).each do |user| %>
+    <ul>
       <% if user %>
-        <li><%= user.email %></li>
+        <li>
+        <%= image_tag user.gravatar_url(:size => 40, :default => :identicon) %> <br />
+        <%= user.email %></li>
       <% end %>
-    <% end %> 
-  </ul>
+    </ul>
+  <% end %> 
 
 <% end %>
