@@ -1,7 +1,7 @@
 <h1>Regionen</h1>
 <ul>
 <% @regions.each do |region|%>
-  <li><%= link_to region.name, region %></li>
+  <li><%= link_to region.name, region %> - <%= region.prefectures.map(&:user).compact.map{|u| u.email.split(/\.|@/).first.capitalize}.join(", ") %></li>
 <% end %>
 </ul>
 

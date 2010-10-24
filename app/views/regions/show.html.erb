@@ -6,18 +6,15 @@
 </ul>
 <p><%= link_to "Zurück zur Regionsübersicht", regions_path %></p>
 
-
 <% content_for :sidebar2 do %>
-
-<h3>Bearbeiter</h3>
-  <% @region.prefectures.map(&:user).each do |user| %>
-    <ul>
-      <% if user %>
-        <li>
-        <%= image_tag user.gravatar_url(:size => 40, :default => :identicon) %> <br />
-        <%= user.email %></li>
-      <% end %>
-    </ul>
-  <% end %> 
-
+  <h3>Bearbeiter</h3>
+    <% @region.prefectures.map(&:user).each do |user| %>
+      <ul>
+        <% if user %>
+          <li>
+          <%= image_tag user.gravatar_url(:size => 40, :default => :identicon) %> <br />
+          <%= user.email %></li>
+        <% end %>
+      </ul>
+    <% end %> 
 <% end %>
