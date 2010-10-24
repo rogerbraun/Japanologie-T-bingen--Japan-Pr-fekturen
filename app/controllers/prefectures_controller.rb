@@ -1,5 +1,6 @@
 class PrefecturesController < ApplicationController
   #before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authorize_edit, :only => :edit
   # GET /prefectures
   # GET /prefectures.xml
   def index
@@ -79,6 +80,16 @@ class PrefecturesController < ApplicationController
     respond_to do |format|
       format.html { redirect_to(prefectures_url) }
       format.xml  { head :ok }
+    end
+  end
+
+  private
+
+  def authorize_edit
+    @prefecture = Prefecture.find(params[:id])
+    unless current_user.admin? or current_user.region == @prefecture.region
+      flash[:notice] = "Dir fehlen die Rechte für diese Aktion"
+      redirect_to @prefecture 
     end
   end
 end
