@@ -15,9 +15,10 @@
     <div class="menu"> 
       <ul> 
         <li><%= link_to "Regionen", regions_path %></li> 
-        <li><%= link_to "Präfekturen", prefectures_path %></a></li> 
+        <li><%= link_to "Präfekturen", prefectures_path %></li> 
 <% if user_signed_in? %>
  <li><%= link_to "Abmelden", destroy_user_session_path %></li>
+ 
 <% else %>
   <li><%= link_to "Anmelden", new_user_session_path %></li>
   <li><%= link_to "Registrieren", new_user_registration_path %></li>
@@ -33,15 +34,19 @@
   <section id="main"><!-- #main content and sidebar area --> 
   
     <aside id="sidebar1"><!-- sidebar1 --> 
- 
+      <p><%= notice %></p>
+      <p><%= alert%></p>
+         
     </aside><!-- end of sidebar1 --> 
   
       <section id="content"><!-- #content --> 
-      <p><%= notice %></p>
-      <p><%= alert%></p>
       
            <%= yield %> 
       </section><!-- end of #content --> 
+
+    <aside id="sidebar2">
+      <%= yield :sidebar2 %>
+    </aside>
  
  
   </section><!-- end of #main content and sidebar--> 

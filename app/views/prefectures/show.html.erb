@@ -3,7 +3,7 @@
   <%= raw Maruku.new(@prefecture.content).to_html %>
 </p>
 
-
-<%= link_to 'Edit', edit_prefecture_path(@prefecture) %> |
+<p>
+<%= link_to 'Bearbeiten', edit_prefecture_path(@prefecture) %> |
 <%= link_to 'Zurück zur Region', @prefecture.region%>
-
+</p>
